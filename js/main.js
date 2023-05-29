@@ -197,4 +197,31 @@ $(document).ready(function () {
 		};
 		World.add(engine.world, shapes.trapezoid(width, height, slope, config));
 	});
+
+	$("#random").on("click", () => {
+		const radius = 30;
+		const mass = Math.floor(Math.random() * 91) + 10;
+		const config = {
+			mass,
+			restitution: 0.5,
+			friction: 0,
+		};
+
+		const yPosition = Math.floor(Math.random() * 501) + 20;
+		const height = (870 - yPosition) / 100;
+
+		const time = Math.sqrt((height * 2) / 9.8);
+		const energy = height * 9.8 * mass;
+
+		$(".time").text(`${time.toFixed(3)}с`);
+		$(".energy").text(`${energy.toFixed(3)}Дж`);
+
+		const circle = Bodies.circle(
+			$(window).width() - 400,
+			yPosition,
+			radius,
+			config
+		);
+		World.add(engine.world, circle);
+	});
 });

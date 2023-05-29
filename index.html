@@ -27,6 +27,11 @@
 			.gap-2 {
 				gap: 0.5rem;
 			}
+			.stats {
+				position: fixed;
+				right: 100px;
+				top: 100px;
+			}
 		</style>
 	</head>
 	<body>
@@ -77,10 +82,16 @@
 				>
 					NEW TRAPEZOID
 				</button>
+				<button class="btn btn-primary" id="random">RANDOM</button>
 			</div>
 
 			<!-- ! NEW BUTTON GROUP END -->
 		</nav>
+
+		<div class="stats">
+			<h4>Время падения: <span class="time"></span></h4>
+			<h4>Энергия: <span class="energy"></span></h4>
+		</div>
 
 		<div class="modal" tabindex="-1" id="edit-modal">
 			<div class="modal-dialog">
